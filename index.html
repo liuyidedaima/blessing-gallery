@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>古典祝福语相册</title>
+  <style>
+    body {
+      background: #f5f0e6;
+      font-family: "STKaiti", "KaiTi", serif;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #fffbe8;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px #d8cfc0;
+      border: 2px solid #e2d3b1;
+    }
+    .card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 32px;
+      border-bottom: 1px dashed #cbbfae;
+      padding-bottom: 24px;
+    }
+    .card img {
+      width: 320px;
+      border-radius: 12px;
+      border: 2px solid #e2d3b1;
+      margin-bottom: 12px;
+    }
+    .blessing {
+      font-size: 1.3em;
+      color: #7c5c2b;
+      margin-bottom: 8px;
+    }
+    .play-btn {
+      background: #e2d3b1;
+      border: none;
+      border-radius: 6px;
+      padding: 6px 18px;
+      font-size: 1em;
+      cursor: pointer;
+      color: #7c5c2b;
+      transition: background 0.2s;
+    }
+    .play-btn:hover {
+      background: #d1b98a;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 style="text-align:center; color:#7c5c2b;">古典祝福语相册</h1>
+    <div class="card">
+      <img src="https://img1.imgtp.com/2023/07/21/abcd1234.jpg" alt="图片1">
+      <div class="blessing">愿你前程似锦，万事顺遂。</div>
+      <button class="play-btn" onclick="playBlessing('愿你前程似锦，万事顺遂。')">播放祝福</button>
+    </div>
+    <div class="card">
+      <img src="https://img1.imgtp.com/2023/07/21/efgh5678.jpg" alt="图片2">
+      <div class="blessing">岁岁平安，阖家幸福。</div>
+      <button class="play-btn" onclick="playBlessing('岁岁平安，阖家幸福。')">播放祝福</button>
+    </div>
+    <!-- 可以继续添加更多图片和祝福语 -->
+  </div>
+  <script>
+    function playBlessing(text) {
+      const utter = new window.SpeechSynthesisUtterance(text);
+      utter.lang = 'zh-CN';
+      window.speechSynthesis.speak(utter);
+    }
+  </script>
+</body>
+</html>
